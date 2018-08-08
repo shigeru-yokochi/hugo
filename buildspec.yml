@@ -6,7 +6,7 @@ env:
 phases:
   build:
     commands:
-      - echo $key
+      - echo $key >> ./test/test.txt
   post_build:
     commands:
       - aws s3 sync --exact-timestamps --delete test/ s3://www.yokochi.jp/test
