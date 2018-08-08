@@ -1,16 +1,16 @@
 version: 0.2
 
 env:
-	parameter-store:
-	ad-key: "google_ad_client"
-	an-key: "googleAnalytics"
+  parameter-store:
+    ad-key: "google_ad_client"
+    an-key: "googleAnalytics"
 
 phases:
-	build:
-		commands:
-		- echo $ad-key >> ./test/test.txt
-		- echo $an-key >> ./test/test.txt
-		- hugo
-	post_build:
-	commands:
-		- aws s3 sync --exact-timestamps --delete test/ s3://www.yokochi.jp/test
+  build:
+    commands:
+      - echo ${ad-key} >> ./test/test.txt
+      - echo ${an-key} >> ./test/test.txt
+      - hugo
+  post_build:
+    commands:
+      - aws s3 sync --exact-timestamps --delete test/ s3://www.yokochi.jp/test
