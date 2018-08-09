@@ -6,11 +6,18 @@ env:
     key2: "googleAnalytics"
     key3: "CloudFrontDistributionID"
 phases:
+  install:
+    commands:
+      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v0.46/hugo_0.46_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
+      - tar xf /tmp/hugo.tar.gz -C /tmp
+      - mv /tmp/hugo /usr/bin/hugo
+      - rm -rf /tmp/hugo*
   build:
     commands:
-      - echo $key1 >> ./test/test.txt
-      - echo $key2 >> ./test/test.txt
+      - echo $key1 >> ./themes/nederburg/layouts/partials/header.html
+      - echo $key2 >> ./config.toml
+      - hugo     
   post_build:
     commands:
-      - aws s3 sync --exact-timestamps --delete test/ s3://www.yokochi.jp/test
+      - aws s3 sync --exact-timestamps --delete public/ s3://www.yokochi.jp/test
       - aws cloudfront create-invalidation --distribution-id $key3 --paths "/sorry/*"
