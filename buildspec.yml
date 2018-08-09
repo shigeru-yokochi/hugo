@@ -13,4 +13,4 @@ phases:
   post_build:
     commands:
       - aws s3 sync --exact-timestamps --delete test/ s3://www.yokochi.jp/test
-      - aws cloudfront create-invalidation --distribution-id E39GYK9XHSENIR --paths "/sorry/*"
+      - aws cloudfront create-invalidation --distribution-id $key3 --paths "/sorry/*"
