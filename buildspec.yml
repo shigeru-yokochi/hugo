@@ -19,5 +19,5 @@ phases:
       - hugo     
   post_build:
     commands:
-      - aws s3 sync --exact-timestamps --delete / s3://www.yokochi.jp
+      - aws s3 sync --exact-timestamps --delete /public s3://www.yokochi.jp
       - aws cloudfront create-invalidation --distribution-id $key3 --paths "/*"
