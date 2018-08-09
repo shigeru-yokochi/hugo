@@ -5,7 +5,7 @@ env:
     key1: "google_ad_client"
     key2: "googleAnalytics"
     key3: "CloudFrontDistributionID"
-  phases:
+phases:
   build:
     commands:
       - echo $key1 >> ./test/test.txt
