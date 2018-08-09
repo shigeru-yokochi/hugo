@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://www.yokochi.jp/"
+        },
+        "articleSection" : "post",
+        "name" : "3軸デジタルコンパスHMC5883L",
+        "headline" : "3軸デジタルコンパスHMC5883L",
+        "description" : "概要 i2cで動作する3軸デジタルコンパスHMC5883Lの使い方です。 動作しないモジュールも出回っているみたいなので動かなくて悩むまえに確認してください。
+動作しないモジュールについての記事はこちら↓ i2cアドレスが0x0dのHMC5883Lモジュールについて
+確認箇所 ↓ 石はL883 2549 であることを確認する。
+↓ 0x1eで認識されることを確認する。
+↓ピンアサイン(参考)
+サンプルコード(c言語) #include &lt;stdio.h&gt; #include &lt;linux/i2c-dev.h&gt; #include &lt;fcntl.h&gt; #include &lt;math.h&gt;	//-lm int HMC5883L_init(void); int HMC5883L_GetDirection(void); static int m_fd; static int m_nDirection; static int HMC5883L_write(unsigned char address, unsigned char data); static unsigned char HMC5883L_read(unsigned char address); static void HMC5883L_readData(int *idata); /***************************************************************** *	初期化 *****************************************************************/ int HMC5883L_init(void) { char *i2cfile = &quot;/dev/i2c-1&quot;; unsigned char i2caddr = 0x1e; unsigned char data; if ((m_fd = open(i2cfile, O_RDWR)) &lt; 0) { printf(&quot;Faild to open i2c port\n&quot;); return -1; } if (ioctl(m_fd, I2C_SLAVE, i2caddr) &lt; 0) { printf(&quot;Unable to get bus access to talk to slave\n&quot;); return -1; } data = HMC5883L_read(0x0a); if (data !",
+        "inLanguage" : "pt-BR",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2017",
+        "datePublished": "2017-04-05 18:43:41 &#43;0900 JST",
+        "dateModified" : "2017-04-05 18:43:41 &#43;0900 JST",
+        "url" : "https://www.yokochi.jp/post/3%E8%BB%B8%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%B3%E3%83%B3%E3%83%91%E3%82%B9hmc5883l/",
+        "wordCount" : "445",
+        "image" : https://www.yokochi.jp//images/20170401_145740-1.jpg",
+        "keywords" : [ "","","Blog" ]   
+    }
+    </script>
+
+ <title>3軸デジタルコンパスHMC5883L </title>
+
+
+<meta name="description" content="Describe your website" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" id="ct-tracks-google-fonts-css" href="//fonts.googleapis.com/css?family=Raleway%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;ver=4.7.2" type="text/css" media="all">
+<link rel="stylesheet" href="https://www.yokochi.jp/css/font-awesome.min.css" type='text/css' media='all'>
+
+<link href="https://www.yokochi.jp/css/style.css" rel="stylesheet" id="theme-stylesheet" type='text/css' media='all'>
+
+<link href="https://www.yokochi.jp/css/custom.css" rel="stylesheet" type='text/css' media='all'>
+<link rel="shortcut icon" href="https://www.yokochi.jp/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.yokochi.jp/img/favicon.ico" type="image/x-icon">
+
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121444026-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+
+
+<body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
+  
+  <div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main">Skip to content</a>
+    <header id="site-header" class="site-header" role="banner">
+      <div class='top-navigation'>
+        <div class='container'>
+
+  <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
+    <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
+
+    <div class="menu">
+
+      <ul id="menu-secondary-items" class="menu-secondary-items">
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/"></a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/bike">bike</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/drone">drone</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/raspberrypi">raspberrypi</a>
+        </li>
+        
+        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
+          <a href="/categories/trekking">trekking</a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <ul class="social-media-icons">
+
+
+    
+    <li>
+      <a href="https://www.facebook.com/shigeru.yokochi" data-animate-hover="pulse" class="facebook" target="_blank">
+        <i class="fa fa-facebook-square" title="facebook"></i>
+        <span class="screen-reader-text">facebook</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20googleplus" data-animate-hover="pulse" class="gplus" target="_blank">
+        <i class="fa fa-google-plus" title="googleplus"></i>
+        <span class="screen-reader-text">googleplus</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20twitter" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fa fa-twitter-square" title="twitter"></i>
+        <span class="screen-reader-text">twitter</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://www.instagram.com/shigeru_yokochi_01/" data-animate-hover="pulse" class="twitter" target="_blank">
+        <i class="fa fa-instagram" title="instagram"></i>
+        <span class="screen-reader-text">instagram</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="mailto:shigeru@yokochi.jp" data-animate-hover="pulse" class="email">
+        <i class="fa fa-envelope" title="email"></i>
+        <span class="screen-reader-text">email</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20linkedin" data-animate-hover="pulse" class="linkedin" target="_blank">
+        <i class="fa fa-linkedin" title="linkedin"></i>
+        <span class="screen-reader-text">linkedin</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20stackoverflow" data-animate-hover="pulse" class="stackoverflow" target="_blank">
+        <i class="fa fa-stack-overflow" title="stackoverflow"></i>
+        <span class="screen-reader-text">stackoverflow</span>
+      </a>
+    </li>
+    
+
+
+    
+    <li>
+      <a href="https://github.com/shigeru-yokochi" data-animate-hover="pulse" class="github" target="_blank">
+        <i class="fa fa-github" title="github"></i>
+        <span class="screen-reader-text">github</span>
+      </a>
+    </li>
+    
+
+
+    
+    <li>
+      <a href="full%20profile%20url%20in%20pinterest" data-animate-hover="pulse" class="pinterest" target="_blank">
+        <i class="fa fa-pinterest" title="pinterest"></i>
+        <span class="screen-reader-text">pinterest</span>
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://www.yokochi.jp/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+        <i class="fa fa-rss" title="rss"></i>
+        <span class="screen-reader-text">rss</span>
+      </a>
+    </li>
+    
+
+
+  </ul></div>
+
+      </div>
+
+      <div class="container">
+        ﻿<div id="title-info" class="title-info">
+  <div id='site-title' class='site-title'>
+    
+    <a href="/"> shigeru-yokochi </a>
+    </div>
+  </div>
+  <button id="toggle-navigation" class="toggle-navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
+  <div id="menu-primary" class="menu-container menu-primary" role="navigation">
+    
+    <p class="site-description">A fast &amp; secure site</p>
+    
+
+    <div class="menu">
+      <ul id="menu-primary-items" class="menu-primary-items">
+        
+        
+        <li id="menu-item" class='menu-item menu-item-type-custom menu-item-object-custom '>
+          <a href="https://www.yokochi.jp/">Home</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://www.yokochi.jp/categories/raspberrypi">raspberrypi</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://www.yokochi.jp/categories/drone">drone</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://www.yokochi.jp/categories/trekking">trekking</a>
+          
+        </li>
+        
+        <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page '>
+          <a href="https://www.yokochi.jp/categories/bike">bike</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+
+  </div>
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8434502138745391",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+
+      </div>
+    </header>
+
+    <div id="main" class="main" role="main">
+
+      
+  <div id="loop-container" class="loop-container">
+    
+    <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+
+      <div class='featured-image lazy lazy-bg-image' data-background="https://www.yokochi.jp/images/20170401_145740-1.jpg">
+      </div>
+      
+        <div class="entry-meta">
+          <span class="date">05 April</span>	<span> / </span>
+
+          <span class="author">
+            
+            <a href="https://www.yokochi.jp/" title="Posts by Shigeru Yokochi" rel="author">Shigeru Yokochi</a>
+            
+          </span>
+
+
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/drone">drone</a>
+          </span>
+          
+          <span class="category">
+            <span> / </span>
+
+            <a href="/categories/"></a>
+          </span>
+          
+
+
+        </div>
+        <div class='entry-header'>
+          <h1 class='entry-title'> 3軸デジタルコンパスHMC5883L</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              
+
+<h1 id="概要">概要</h1>
+
+<p>i2cで動作する3軸デジタルコンパスHMC5883Lの使い方です。
+動作しないモジュールも出回っているみたいなので動かなくて悩むまえに確認してください。</p>
+
+<p>動作しないモジュールについての記事はこちら↓
+<a href="http://qiita.com/shigeru-yokochi/items/46eb23bd64bdf333f1ab">i2cアドレスが0x0dのHMC5883Lモジュールについて</a></p>
+
+<h1 id="確認箇所">確認箇所</h1>
+
+<p>↓ 石はL883 2549 であることを確認する。</p>
+
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/146154/880d710c-cd29-d7b8-3ab6-62bc12a3d4ad.jpeg" alt="20170401_145740-1.jpg" /></p>
+
+<p>↓ 0x1eで認識されることを確認する。</p>
+
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/146154/f7e962c2-fcad-69aa-b93c-cb63a96375e4.png" alt="HMC5883L-0x0e.PNG" /></p>
+
+<p>↓ピンアサイン(参考)</p>
+
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/146154/3f31b5d6-55ed-e059-01e5-2000318e4cf9.jpeg" alt="20170401_145800-1.jpg" /></p>
+
+<h1 id="サンプルコード-c言語">サンプルコード(c言語)</h1>
+
+<pre><code class="language-c:hmc5883l.c">
+#include &lt;stdio.h&gt;
+#include &lt;linux/i2c-dev.h&gt; 
+#include &lt;fcntl.h&gt;
+#include &lt;math.h&gt;	//-lm
+
+int HMC5883L_init(void);
+int HMC5883L_GetDirection(void);
+
+static int m_fd;
+static int m_nDirection;
+
+static int HMC5883L_write(unsigned char address, unsigned char data);
+static unsigned char HMC5883L_read(unsigned char address);
+static void HMC5883L_readData(int *idata);
+/*****************************************************************
+*	初期化
+*****************************************************************/
+int HMC5883L_init(void)
+{
+	char *i2cfile = &quot;/dev/i2c-1&quot;;
+	unsigned char i2caddr = 0x1e;
+	unsigned char data;
+
+	if ((m_fd = open(i2cfile, O_RDWR)) &lt; 0) {
+		printf(&quot;Faild to open i2c port\n&quot;);
+		return -1;
+	}
+	if (ioctl(m_fd, I2C_SLAVE, i2caddr) &lt; 0) {
+		printf(&quot;Unable to get bus access to talk to slave\n&quot;);
+		return -1;
+	}
+	data = HMC5883L_read(0x0a);
+	if (data != 0x48) {
+		printf(&quot;Identification Register 0x0a check failure [%02x]&quot;, data);
+		return -1;
+	}
+	data = HMC5883L_read(0x0b);
+	if (data != 0x34) {
+		printf(&quot;Identification Register 0x0b check failure [%02x]&quot;, data);
+		return -1;
+	}
+	data = HMC5883L_read(0x0c);
+	if (data != 0x33) {
+		printf(&quot;Identification Register 0x0c check failure [%02x]&quot;, data);
+		return -1;
+	}
+	HMC5883L_write(0x00, 0xe0); /* set default val to Config Reg A */
+	HMC5883L_write(0x02, 0x00); /* set continuous mode to Mode Reg */
+	
+	m_nDirection = 0;
+
+	return 0;
+}
+/*****************************************************************
+*	方角獲得 0..359 0:北
+*****************************************************************/
+int HMC5883L_GetDirection(void)
+{
+	int nCorrectionValue = 20;
+	unsigned char status;
+	int data[3];
+
+	status = HMC5883L_read(0x09);
+	if (status | 0x1) {
+		HMC5883L_readData(data);
+		m_nDirection = (int)(atan2((double)data[0] + nCorrectionValue, ((double)data[2] + nCorrectionValue)*(-1)) * 180 / 3.14159265358979 + 180);
+	}
+
+	return m_nDirection;
+}
+/*****************************************************************
+*	write
+*****************************************************************/
+static int HMC5883L_write(unsigned char address, unsigned char data)
+{
+	unsigned char buf[2];
+	buf[0] = address;
+	buf[1] = data;
+	if ((write(m_fd, buf, 2)) != 2) {
+		printf(&quot;Error writing to i2c slave\n&quot;);
+		return -1;
+	}
+
+	return 0;
+}
+/*****************************************************************
+*	read
+*****************************************************************/
+static unsigned char HMC5883L_read(unsigned char address)
+{
+	unsigned char buf[1];
+	buf[0] = address;
+	if ((write(m_fd, buf, 1)) != 1) {
+		printf(&quot;Error writing to i2c slave\n&quot;);
+	}
+	if (read(m_fd, buf, 1) != 1) {
+		printf(&quot;Error reading from i2c slave\n&quot;);
+	}
+
+	return buf[0];
+}
+/*****************************************************************
+*	data read
+*****************************************************************/
+static void HMC5883L_readData(int *idata)
+{
+	unsigned char i, addr, data[6];
+
+	for (i = 0; i&lt;6; i++) {
+		addr = 0x03 + i;
+		data[i] = HMC5883L_read(addr);
+	}
+	idata[0] = ((int)data[0] &lt;&lt; 24 | (int)data[1] &lt;&lt; 16) &gt;&gt; 16;
+	idata[1] = ((int)data[2] &lt;&lt; 24 | (int)data[3] &lt;&lt; 16) &gt;&gt; 16;
+	idata[2] = ((int)data[4] &lt;&lt; 24 | (int)data[5] &lt;&lt; 16) &gt;&gt; 16;
+}
+
+</code></pre>
+
+<pre><code class="language-c:main.c">
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+
+extern int HMC5883L_init(void);
+extern int HMC5883L_GetDirection(void);
+
+/**************************************
+*	sample
+*************************************/
+int main(int argc,	char **argv)
+{
+	int i;
+
+	if (HMC5883L_init() == 1) {
+		printf(&quot;*** HMC5883L_init() error.\n&quot;);
+		return -1;
+	}
+
+
+	for (i = 0; i &lt; 100; i++) {
+		printf(&quot;%d\n&quot;,HMC5883L_GetDirection());
+		usleep(1000 * 100);
+	}
+
+	return 0;
+}
+
+</code></pre>
+
+<pre><code class="language-c:Makefile">
+all:
+	gcc -o main main.c hmc5883l.c -lm
+clean:
+	rm -f  main
+
+</code></pre>
+
+<h1 id="サンプルコード実行結果">サンプルコード実行結果</h1>
+
+<p>北(0)から東(90)の方向へ回転している様子</p>
+
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/146154/5e139784-733c-a957-f929-e2d73efb6693.png" alt="HMC5883.PNG" /></p>
+
+            </article>
+          </div>
+          
+      <div class='entry-meta-bottom'>
+        
+
+  <div class="entry-categories"><p><span>Categories</span>
+    
+    <a href="/categories/drone" title="View all posts in drone">drone</a>
+    <a href="/categories/" title="View all posts in "></a>
+  </p>
+</div>
+
+
+
+<div class="entry-tags"><p><span>Tags</span>
+  
+  <a href="/tags/" title="View all posts tagged "></a>
+  
+  <a href="/tags/" title="View all posts tagged "></a>
+  
+
+</p></div>	</div>
+
+<div class="author-meta">
+
+  <div class="author">
+    <img alt='Shigeru Yokochi' src="https://avatars0.githubusercontent.com/u/12773136?s=400&u=1f5799d3ac39deec135fcbb3e7e072a7d8cb0251&v=" class='avatar avatar-72 photo' height='72' width='72'>
+
+    <span>
+      Written by:<a href="https://www.yokochi.jp/" title="Posts by Shigeru Yokochi" rel="author">Shigeru Yokochi</a>        </span>
+    </div>
+    <div class="bio">
+      
+
+
+      
+      <a class="facebook" target="_blank"
+      href="https://www.facebook.com/shigeru.yokochi">
+      <i class="fa fa-facebook"
+      title="facebook icon"></i>
+    </a>
+    
+
+    
+    <a class="googleplus" target="_blank"
+    href="full%20profile%20url%20in%20googleplus">
+    <i class="fa fa-google-plus"
+    title="googleplus icon"></i>
+  </a>
+  
+
+
+  
+  <a class="twitter" target="_blank"
+  href="full%20profile%20url%20in%20twitter">
+  <i class="fa fa-twitter-square"
+  title="twitter icon"></i>
+</a>
+
+
+<a class="linkedin" target="_blank"
+href="full%20profile%20url%20in%20linkedin">
+<i class="fa fa-linkedin-square"
+title="linkedin icon"></i>
+</a>
+
+
+
+<a class="email" target="_blank"
+href="mailto:shigeru@yokochi.jp">
+<i class="fa fa-envelope"
+title="email icon"></i>
+</a>
+
+
+
+<a class="instagram" target="_blank"
+href="https://www.instagram.com/shigeru_yokochi_01/">
+<i class="fa fa-instagram"
+title="instagram icon"></i>
+</a>
+
+
+
+<a class="stackoverflow" target="_blank"
+href="full%20profile%20url%20in%20stackoverflow">
+<i class="fa fa-stack-overflow"
+title="stackoverflow icon"></i>
+</a>
+
+
+
+<a class="github" target="_blank"
+href="https://github.com/shigeru-yokochi">
+<i class="fa fa-github"
+title="github icon"></i>
+</a>
+
+
+
+
+<a class="pinterest" target="_blank"
+href="full%20profile%20url%20in%20pinterest">
+<i class="fa fa-pinterest"
+title="pinterest icon"></i>
+</a>
+
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+<section id="comments" class="comments">
+  
+
+  
+
+
+
+
+</section>
+</div>
+
+ 
+
+
+
+    </div>
+
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+
+
+
+<script type="text/javascript">
+var nend_params = {"media":55925,"site":302590,"spot":891697,"type":1,"oriented":1};
+</script>
+<script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+
+	<h1>
+    
+    <a href=""> shigeru-yokochi </a>
+    
+	</h1>
+
+			
+			<p class="site-description">A fast &amp; secure site</p>
+			
+
+		<div id="menu-footer" class="menu-container menu-footer" role="navigation">
+		<div class="menu">
+
+      <ul id="menu-footer-items" class="menu-footer-items">
+        
+</ul>
+
+</div>	</div>
+
+<ul class="social-media-icons">
+
+        
+				<li>
+					<a class="facebook" target="_blank"
+					   href="https://www.facebook.com/shigeru.yokochi" >
+						<i class="fa fa-facebook" title="facebook"></i>
+						<span class="screen-reader-text">facebook</span>
+					</a>
+				</li>
+        
+
+        
+				<li>
+					<a class="googleplus" target="_blank"
+					   href="full%20profile%20url%20in%20googleplus" >
+						<i class="fa fa-google-plus" title="googleplus"></i>
+						<span class="screen-reader-text">googleplus</span>
+					</a>
+				</li>
+        
+
+
+        
+        <li>
+        <a href="full%20profile%20url%20in%20twitter"  class="twitter" target="_blank">
+            <i class="fa fa-twitter-square" title="twitter"></i>
+            <span class="screen-reader-text">twitter</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="https://www.instagram.com/shigeru_yokochi_01/"  class="twitter" target="_blank">
+            <i class="fa fa-instagram" title="instagram"></i>
+            <span class="screen-reader-text">instagram</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="mailto:shigeru@yokochi.jp"  class="email">
+            <i class="fa fa-envelope" title="email"></i>
+            <span class="screen-reader-text">email</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="full%20profile%20url%20in%20linkedin" class="linkedin" target="_blank">
+            <i class="fa fa-linkedin" title="linkedin"></i>
+            <span class="screen-reader-text">linkedin</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="full%20profile%20url%20in%20stackoverflow"  class="stackoverflow" target="_blank">
+            <i class="fa fa-stack-overflow" title="stackoverflow"></i>
+            <span class="screen-reader-text">stackoverflow</span>
+        </a>
+        </li>
+        
+
+
+        
+        <li>
+        <a href="https://github.com/shigeru-yokochi"  class="github" target="_blank">
+            <i class="fa fa-github" title="github"></i>
+            <span class="screen-reader-text">github</span>
+        </a>
+        </li>
+        
+
+
+        
+        <li>
+        <a href="full%20profile%20url%20in%20pinterest"  class="pinterest" target="_blank">
+            <i class="fa fa-pinterest" title="pinterest"></i>
+            <span class="screen-reader-text">pinterest</span>
+        </a>
+        </li>
+        
+
+        
+        <li>
+        <a href="https://www.yokochi.jp/index.xml" data-animate-hover="pulse" class="rss" target="_blank">
+            <i class="fa fa-rss" title="rss"></i>
+            <span class="screen-reader-text">rss</span>
+        </a>
+        </li>
+        
+
+				</ul>	<div class="design-credit">
+		
+		<p>&copy; 2018 yokochi.jp</p>
+		
+		<p></p>
+		
+		<p></p>
+		
+	</div>
+</footer>
+
+  </div>
+  <script src="https://www.yokochi.jp/js/jquery.min.js"></script>
+<script src="https://www.yokochi.jp/js/jquerymigrate.js"></script>
+<script src="https://www.yokochi.jp/js/production.min.js"></script>
+
+</body>
+</html>
