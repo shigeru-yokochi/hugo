@@ -14,10 +14,10 @@ phases:
       - rm -rf /tmp/hugo*
   build:
     commands:
-      - echo $key1 >> ./themes/nederburg/layouts/partials/header.html
+#      - echo $key1 >> ./themes/nederburg/layouts/partials/header.html
       - echo $key2 >> ./config.toml
       - hugo     
   post_build:
     commands:
-      - aws s3 sync --exact-timestamps --delete /public s3://www.yokochi.jp/public
+      - aws s3 sync --exact-timestamps --delete /public s3://www.yokochi.jp/.
       - aws cloudfront create-invalidation --distribution-id $key3 --paths "/*"
