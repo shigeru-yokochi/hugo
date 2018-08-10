@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   parameter-store:
-#    key1: "google_ad_client"
+    key1: "amazon_search_widget"
     key2: "googleAnalytics"
     key3: "CloudFrontDistributionID"
 phases:
@@ -14,7 +14,7 @@ phases:
       - rm -rf /tmp/hugo*
   build:
     commands:
-#      - echo $key1 >> ./themes/nederburg/layouts/partials/header.html
+      - echo $key1 >> ./themes/nederburg/layouts/partials/header.html
       - echo $key2 >> ./config.toml
       - hugo     
   post_build:
