@@ -1,4 +1,4 @@
-baseurl = "https://www.yokochi.jp/"
+baseurl = "https://www.yokochi.jp/public/"
 title = "shigeru-yokochi"
 theme = "nederburg"
 languageCode = "en-us"
@@ -10,7 +10,7 @@ paginate = 15 #frontpage pagination
   slogan = "A fast &amp; secure site"
   description = "Describe your website" # meta description
   author = "Shigeru Yokochi"
-  authorLink = "https://www.yokochi.jp/"
+  authorLink = "https://www.yokochi.jp/public/"
 
 #  bio = [ "お問い合わせはこちらへxxxxxxx"  ]
   copyright = [ "&copy; 2018 yokochi.jp",    "",    ""  ]
