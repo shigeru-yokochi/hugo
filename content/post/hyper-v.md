@@ -22,7 +22,11 @@ Windows10 + Hyper-V + Dockerを構築する予定だったが、断念。。
 
 ![image](/images/hyper-v.JPG)
 
-# PCのCPUを調べたらSLATに対応していませんでした。。
+# systeminfoコマンドでハードウェアの互換性の検証の結果
+第2レベルのアドレス変換が「いいえ」でした。
+![image](/images/systeminfo.JPG)
+
+# やはりSLATに対応していないようです。
 
 ![image](/images/coreinfo.JPG)
 
