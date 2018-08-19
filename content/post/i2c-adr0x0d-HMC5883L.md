@@ -27,8 +27,6 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=172244&p=1102197
 [3軸デジタルコンパスHMC5883Lを使ってみる](http://qiita.com/shigeru-yokochi/items/c36c975e14c0c86886c0)
 
 
-
-
 # 動作しないHMC5883Lの見分け方
 
 ## ICの刻印
@@ -36,7 +34,7 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=172244&p=1102197
 - 誤：DA 5883 6012　
 - 正：L883 2230
 
-![20170321_215108-1.jpg](https://qiita-image-store.s3.amazonaws.com/0/146154/5e4bcc28-9359-cd56-2f7c-a249eefcaf01.jpeg)
+{{< figure src="https://qiita-image-store.s3.amazonaws.com/0/146154/5e4bcc28-9359-cd56-2f7c-a249eefcaf01.jpeg" width="100%" >}}
 
 
 ## i2cアドレス
@@ -44,11 +42,11 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=172244&p=1102197
 - 誤：0x0d
 - 正：0x1e
 
-![HMC5883L-0x0d.PNG](https://qiita-image-store.s3.amazonaws.com/0/146154/4757c922-5e42-5812-e75c-6187ecd1713f.png)
+{{< figure src="https://qiita-image-store.s3.amazonaws.com/0/146154/4757c922-5e42-5812-e75c-6187ecd1713f.png" width="100%" >}}
 
 
 （裏側参考）↓
-![20170321_215257-1.jpg](https://qiita-image-store.s3.amazonaws.com/0/146154/3c179d40-cf23-d08e-b239-8e39895755f2.jpeg)
+{{< figure src="https://qiita-image-store.s3.amazonaws.com/0/146154/3c179d40-cf23-d08e-b239-8e39895755f2.jpeg" width="100%" >}}
 
 
 

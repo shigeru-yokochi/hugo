@@ -19,7 +19,6 @@ https://qiita.com/shigeru-yokochi/items/0a0a4f06cd8dec553159
 
 
 ↓裏側
-
-![image](/images/20170907_164401.jpg)
+{{< figure src="/images/20170907_164401.jpg" width="100%" >}}
 
 
