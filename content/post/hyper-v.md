@@ -14,21 +14,20 @@ author = ""
 Windows10 + Hyper-V + Dockerを構築する予定だったが、断念。。
 理由はPCのCPUが古すぎでした。
 
-# Doker起動時のエラー
 
-![image](/images/docker.JPG)
+# Doker起動時のエラー
+{{< figure src="/images/docker.JPG" width="100%" >}}
+
 
 # Hyper-Vから起動してみると以下のエラーが
-
-![image](/images/hyper-v.JPG)
+{{< figure src="/images/hyper-v.JPG" width="100%" >}}
 
 # systeminfoコマンドでハードウェアの互換性の検証の結果
 第2レベルのアドレス変換が「いいえ」でした。
-![image](/images/systeminfo.JPG)
+{{< figure src="/images/systeminfo.JPG" width="100%" >}}
 
 # やはりSLATに対応していないようです。
-
-![image](/images/coreinfo.JPG)
+{{< figure src="/images/coreinfo.JPG" width="100%" >}}
 
 
 
