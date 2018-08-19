@@ -20,15 +20,11 @@ author = ""
 - バス5分(陣馬登山口)
 - JR藤野16:30頃
 
-
-![image](/images/20180430_092823.jpg)
-![image](/images/20180430_110241.jpg)
-![image](/images/20180430_113020.jpg)
-![image](/images/20180430_120214.jpg)
-![image](/images/20180422_164846.jpg)
-
-
-
+{{< figure src="/images/20180430_092823.jpg" width="100%" >}}
+{{< figure src="/images/20180430_110241.jpg" width="100%" >}}
+{{< figure src="/images/20180430_113020.jpg" width="100%" >}}
+{{< figure src="/images/20180430_120214.jpg" width="100%" >}}
+{{< figure src="/images/20180422_164846.jpg" width="100%" >}}
 
 - 山ご飯で使用した道具
 

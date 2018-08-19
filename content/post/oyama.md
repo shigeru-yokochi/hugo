@@ -19,11 +19,8 @@ https://www.ooyama-cable.co.jp/map/
 - 小田急線 伊勢原17:00頃
 
 
-
-
-![image](/images/20180609_135626.jpg)
-![image](/images/20180609_151551.jpg)
-
+{{< figure src="/images/20180609_135626.jpg" width="100%" >}}
+{{< figure src="/images/20180609_151551.jpg" width="100%" >}}
 
 
 - 山ご飯で使用した道具

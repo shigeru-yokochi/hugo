@@ -23,16 +23,13 @@ author = ""
 - (バス15分)
 - 渋沢駅17:00頃
 
-
-
-
-![image](/images/20180526_091218.jpg)
-![image](/images/20180526_104237.jpg)
-![image](/images/20180526_111212.jpg)
-![image](/images/20180526_114216.jpg)
-![image](/images/20180526_122503.jpg)
-![image](/images/20180526_144113.jpg)
-![image](/images/20180526_152845.jpg)
+{{< figure src="/images/20180526_091218.jpg" width="100%" >}}
+{{< figure src="/images/20180526_104237.jpg" width="100%" >}}
+{{< figure src="/images/20180526_111212.jpg" width="100%" >}}
+{{< figure src="/images/20180526_114216.jpg" width="100%" >}}
+{{< figure src="/images/20180526_122503.jpg" width="100%" >}}
+{{< figure src="/images/20180526_144113.jpg" width="100%" >}}
+{{< figure src="/images/20180526_152845.jpg" width="100%" >}}
 
 
 # 参考にしたサイト
