@@ -28,6 +28,11 @@ paginate = 15 #frontpage pagination
   url = "/categories/raspberrypi"
   weight = 80
 
+[[menu.main]]
+  name = "IT"
+  url = "/categories/IT"
+  weight = 85
+
 
 [[menu.main]]
   name = "drone"
