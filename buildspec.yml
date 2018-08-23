@@ -20,6 +20,7 @@ phases:
       - echo $key1 >> ./themes/nederburg/layouts/partials/header.html
       - echo $key4 >> ./themes/nederburg/layouts/partials/footer.html
       - echo $key2 >> ./config.toml
+      - echo ./config.toml
       - hugo     
   post_build:
     commands:
