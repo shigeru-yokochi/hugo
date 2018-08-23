@@ -11,13 +11,11 @@ paginate = 15 #frontpage pagination
   description = "Describe your website" # meta description
   author = "Shigeru Yokochi"
   authorLink = "https://www.yokochi.jp/"
-
 #  bio = [ "お問い合わせはこちらへxxxxxxx"  ]
   copyright = [ "&copy; 2018 yokochi.jp",    "",    ""  ]
-
   email = "shigeru@yokochi.jp"
 
-  [[menu.main]]
+[[menu.main]]
   name = "Home"
   url = "/"
   weight = 1
@@ -50,10 +48,7 @@ paginate = 15 #frontpage pagination
   url = "/categories/bike"
   weight = 150
 
-
-
-
-  [params.social]
+[params.social]
   facebook      = "https://www.facebook.com/shigeru.yokochi"
   googleplus    = "full profile url in googleplus"
   email         = "shigeru@yokochi.jp"
@@ -65,6 +60,4 @@ paginate = 15 #frontpage pagination
   pinterest     = "full profile url in pinterest"
   rss           = true
 
-
-
-
+#end----
