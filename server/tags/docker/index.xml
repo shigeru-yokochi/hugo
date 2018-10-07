@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on shigeru-yokochi</title>
+    <link>https://www.yokochi.jp/tags/docker/</link>
+    <description>Recent content in Docker on shigeru-yokochi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Aug 2018 11:43:41 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.yokochi.jp/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ハイパーバイザーが実行されていないため、、、</title>
+      <link>https://www.yokochi.jp/post/hyper-v/</link>
+      <pubDate>Sun, 19 Aug 2018 11:43:41 +0900</pubDate>
+      
+      <guid>https://www.yokochi.jp/post/hyper-v/</guid>
+      <description> Windows10 + Hyper-V + Dockerを構築する予定だったが、断念。。 理由はPCのCPUが古すぎでした。
+Doker起動時のエラー   Hyper-Vから起動してみると以下のエラーが   systeminfoコマンドでハードウェアの互換性の検証の結果 第2レベルのアドレス変換が「いいえ」でした。   やはりSLATに対応していないようです。   参考にしたサイト https://docs.microsoft.com/ja-jp/virtualization/hyper-v-on-windows/reference/hyper-v-requirements
+https://technet.microsoft.com/ja-jp/sysinternals/cc835722
+ このCPUです   </description>
+    </item>
+    
+  </channel>
+</rss>

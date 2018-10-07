@@ -1,5 +1,5 @@
 ﻿+++
-title = "My road bike."
+title = "ANCHOR　RNC3"
 date = 2018-10-02T18:43:41+09:00
 categories = ["bike", ""]
 description = ""
@@ -29,6 +29,7 @@ parts   | name
   スポーク | sapim CX-RAY
   バーテープ | Fizik スーパーライトクラシック レーシングイエロー
   タイヤ | MICHELIN PRO 3 700X23C
+  コンポーネント | シマノアルテグラ6600系
 
 
 

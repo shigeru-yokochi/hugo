@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberrypi on shigeru-yokochi</title>
+    <link>https://www.yokochi.jp/categories/raspberrypi/</link>
+    <description>Recent content in Raspberrypi on shigeru-yokochi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Jul 2018 18:43:41 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.yokochi.jp/categories/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raspberry Pi とNFCタグリーダを使い勤怠管理。出退勤打刻装置を作成</title>
+      <link>https://www.yokochi.jp/post/raspberrypi-nfc/</link>
+      <pubDate>Wed, 25 Jul 2018 18:43:41 +0900</pubDate>
+      
+      <guid>https://www.yokochi.jp/post/raspberrypi-nfc/</guid>
+      <description> 内容 詳細はここに投稿していますが、課題となっていた、配線周りをすっきりさせました。 https://qiita.com/shigeru-yokochi/items/b5a9aea510465e6d7676
+ 外部スピーカーはやめて専用にアンプとスピーカを製作した 100均で購入したディスプレイケース内にすべて収めた。 raspberry pi zero w のwifiを使うことにより電源ケーブル1本の構成とした。  使用した主な部品 ディスプレイケース： https://ec.cando-web.co.jp/item/4906137936518
+その他：
+       </description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Zero で自律飛行ドローン作成</title>
+      <link>https://www.yokochi.jp/post/raspberrypizerodrone/</link>
+      <pubDate>Thu, 07 Sep 2017 18:43:41 +0900</pubDate>
+      
+      <guid>https://www.yokochi.jp/post/raspberrypizerodrone/</guid>
+      <description>自律飛行するドローンの作成を始めています。 まだ途中ですが、詳しくは↓を参照してください
+https://qiita.com/shigeru-yokochi/items/0a0a4f06cd8dec553159
+↓裏側   </description>
+    </item>
+    
+  </channel>
+</rss>
