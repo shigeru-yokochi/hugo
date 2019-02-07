@@ -7,7 +7,6 @@ env:
     key3: "CloudFrontDistributionID"
 #    key4: "rakuten_motion_widget"
 #    key5: "amazon_Mobile_Popover"
-    key6: "Disqus"
 phases:
   install:
     commands:
@@ -20,7 +19,6 @@ phases:
 #      - echo $key5 >> ./themes/nederburg/layouts/partials/head.html
       - echo $key1 >> ./themes/nederburg/layouts/partials/header.html
 #      - echo $key4 >> ./themes/nederburg/layouts/partials/footer.html
-      - echo $key6 >> ./themes/nederburg/layouts/_default/single.html
       - echo $key2 >> ./config.toml
       - cat ./config-add.toml >> config.toml
       - cat ./config.toml
