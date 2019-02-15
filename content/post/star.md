@@ -15,7 +15,7 @@ author = ""
 [map](https://www.google.co.jp/maps/place/%E7%BE%8E%E3%81%97%E6%A3%AE%E5%B1%95%E6%9C%9B%E5%8F%B0/@35.9345687,138.4184494,15.75z/data=!4m5!3m4!1s0x601c3feb64eebea3:0x18d66f3f5a91370b!8m2!3d35.9396396!4d138.420879?hl=ja)
 
 
-[こんな感じ](https://photo-promenade.com/yatugatake-kiyosato-starry-heavens2016/)
+[画像](https://www.google.com/search?q=%E7%BE%8E%E3%81%97%E6%A3%AE%E5%B1%95%E6%9C%9B%E5%8F%B0+%E6%98%9F&tbm=isch&source=univ&sa=X&ved=2ahUKEwiA-4Gns73gAhUN87wKHSb4B8UQsAR6BAgDEAE&biw=1733&bih=981)
 
 
 [youtube 4K](https://www.youtube.com/watch?v=3B4UCDpON_A)
