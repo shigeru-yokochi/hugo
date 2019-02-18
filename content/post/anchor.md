@@ -26,13 +26,15 @@ parts   | name
   ペダル | TIME XPRESSO 6
   サドル | Fizik ARIONE  
   シートポスト | デダ Zero 100  
-  スポーク | sapim CX-RAY
+  スポーク | sapim CX-RAY / DT Champion 1.8
   バーテープ | Fizik スーパーライトクラシック レーシングイエロー
   タイヤ | MICHELIN PRO 3 700X23C
   コンポーネント | シマノアルテグラ6600系
 
 
+## WHEEL　(変則　Front ラジアル16本 Rear left:ラジアル8本 right:クロス16本)
 
+{{< figure src="/images/20190218_184622.jpg" width="100%" >}}
 
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=yokochi-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B017N2WHZ8&linkId=785851b168918854085a142bdb2e3b9e"></iframe>
