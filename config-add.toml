@@ -40,6 +40,11 @@
   url = "/categories/bike"
   weight = 150
 
+[[menu.main]]
+  name = "audio"
+  url = "/categories/audio"
+  weight = 160
+
 [params.social]
   facebook      = "https://www.facebook.com/shigeru.yokochi"
   googleplus    = "full profile url in googleplus"
