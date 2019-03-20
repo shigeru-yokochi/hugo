@@ -45,6 +45,12 @@
   url = "/categories/audio"
   weight = 160
 
+[[menu.main]]
+  name = "About me"
+  url = "/categories/About-me"
+  weight = 300
+
+
 [params.social]
   facebook      = "https://www.facebook.com/shigeru.yokochi"
   googleplus    = "full profile url in googleplus"
