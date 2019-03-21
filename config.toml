@@ -2,6 +2,6 @@ baseurl = "https://www.yokochi.jp/"
 title = "shigeru-yokochi"
 theme = "nederburg"
 languageCode = "en-us"
-disqusShortname = ""
+disqusShortname = "yokochi"
 preserveTaxonomyNames = true
 paginate = 15 #frontpage pagination
