@@ -34,6 +34,8 @@ parts   | name
 {{< figure src="/images/betapro2-2.jpg" width="100%" >}}
 {{< figure src="/images/betapro2-3.jpg" width="100%" >}}
 
+<hr/>
+# Amazon
 
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=yokochi-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B017BIX7CQ&linkId=9be49968056268cbd0d3414596ab9eec"></iframe>
@@ -54,3 +56,9 @@ parts   | name
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=yokochi-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07K8LLWY5&linkId=1859b1923a0e908df548df09d3385444"></iframe>
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=yokochi-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JHZF1YH&linkId=cd69f3db2b5955c5de4c8e8bc133d06e"></iframe>
+
+<hr/>
+# Banggood
+
+
+<a target='_blank' href='https://www.banggood.com/KINGKONGLDARC-RX800-PRO-2_4G-8CH-S-FHSS-Digital-Receiver-for-Futaba-14SG-16SZ-18SZ-p-1245343.html?p=MD030313776065201709&custlinkid=260742'><img style="width:120px;" src='https://img.staticbg.com/images/oaupload/banggood/images/FE/87/2bf4b0eb-20d4-425f-8f85-8a93bcf5e615.jpg' alt='' >KINGKONG/LDARC RX800-PRO 2.4G 8CH S-FHSS Digital Receiver for  Futaba 14SG 16SZ 18SZ</a>
