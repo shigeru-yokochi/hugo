@@ -64,8 +64,6 @@ parts   | name
 
 
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//www.banggood.com/KINGKONGLDARC-RX800-PRO-2_4G-8CH-S-FHSS-Digital-Receiver-for-Futaba-14SG-16SZ-18SZ-p-1245343.html?p=MD030313776065201709&custlinkid=260742"></iframe>
-
 <hr/>
 # Banggood
 
