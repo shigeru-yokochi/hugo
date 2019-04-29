@@ -22,12 +22,12 @@ parts   | name
   プロポ | FUTABA 10J 
   フライトコントローラ | Naze32 Rev6 Full Version
   配電盤 | ARRIS AOSTAR-CC3D
-  モータ | Tarot MT1104 4000KV Brushless Motor
+  モータ | [tarot MT1104 4000KV Brushless Motor](https://www.banggood.com/custlink/3KvGr4mA5W)
   ECS | Tarot TL300G5 6A 2-3S BLHeli   
 | フレーム| Tarot TL130H2   
   プロペラ | Tarot 3.0x3.0 inch
   プロペラガード | DIATONE グラス ファイバー 5030 プロペラ プロテクト ガード
-  受信機 | KINGKONG/LDARC RX800-PRO 2.4G 8CH S-FHSS Digital Receiver for Futaba
+  受信機 | [KINGKONG/LDARC RX800-PRO 2.4G 8CH S-FHSS Digital Receiver for Futaba](https://jp.banggood.com/custlink/KDGmcBvbEu)
   バッテリー | 3.8V 550mAh 50C/100C Lipo  ST-PH 2.0 コネクタ
   
 
@@ -44,6 +44,7 @@ parts   | name
 {{< figure src="/images/naze32-4.jpg" width="100%" >}}
 
 
+<hr/>
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=yokochi-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B017BIX7CQ&linkId=9be49968056268cbd0d3414596ab9eec"></iframe>
 
@@ -60,4 +61,6 @@ parts   | name
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=yokochi-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07K8MGLSR&linkId=0c9cfbb15631637865c8415aab6f3b1e"></iframe>
 
+
+<hr/>
 
