@@ -41,16 +41,32 @@ parts   | name
 {{< figure src="/images/betafpv-f4.jpg" width="100%" >}}
 
 
+
+# 結果
+
+↓フライトデータ
+{{< figure src="/images/20200126-01.jpg" width="100%" >}}
+
+
+
+↓動画はこちら(YouTube)
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Z1kQOCqCn-g/0.jpg)](https://www.youtube.com/watch?v=Z1kQOCqCn-g)
+
+
+
 ## コード
 
-- [GitHub上のコード](https://github.com/shigeru-yokochi/drone)を使用
+- [GitHub上のコード](https://github.com/shigeru-yokochi/drone/tree/betafpv)を使用(branch:betafpv)
 - BETAFPV F4 2S AIO Brushless No Rx用の定義は以下の通り（aux2にarmを指定）
+
+- 設定値
 
 ```
 //BETAFPV F4 2S AIO Brushless No Rx
-#define BETAFPV_F4_2S_AIO_THROTTLE	0
-#define BETAFPV_F4_2S_AIO_ROLL		1
-#define BETAFPV_F4_2S_AIO_PITCH		2
+#define BETAFPV_F4_2S_AIO_ROLL		0
+#define BETAFPV_F4_2S_AIO_PITCH		1
+#define BETAFPV_F4_2S_AIO_THROTTLE	2
 #define BETAFPV_F4_2S_AIO_YAW		3
 #define BETAFPV_F4_2S_AIO_AUX2		4
 #define BETAFPV_F4_2S_AIO_ARM		4	//aux2
@@ -63,25 +79,22 @@ parts   | name
 ```
 
 
-## 接続図
 
-- コード変更を最小にするため既存と同じ構成にPWM-SBUS converterとフライトコントローラを接続
-{{< figure src="/images/pwm-sbus.jpg" width="100%" >}}
+```
 
+#define MINIMUM_GROUND_CLEARANCE 40 //最小地上高
+#define MAXIMUM_GROUND_CLEARANCE 400 //最大地上高
+#define DEBUG_MAINLOOP_TO 3 //デバッグ用メインループタイムアウト指定(sec)
+#define FLIGHT_TIME 2 //DEBUG_MAINLOOP_TO - FLIGHT_TIME = landing time
+#define OFFSET_POWER 700
+#define LANDING_POWER 400
+```
 
-
-## CleanFligthで動作確認
-- armとThottleが想定通りの動作をしていることが波形で確認
-- 距離センサ値と加速度センサ値は無視
-{{< figure src="/images/BETAFPV-F4-2S-AIO-Brushless-No-Rx.jpg" width="100%" >}}
-
-## 現物
-{{< figure src="/images/20200104_113508.jpg" width="100%" >}}
 
 
 ## おわりに
 
-- とりあえず確認できたので次は機体を作成してモータを回すところまでかな
+- とりあえず確認できたので次は安定飛行かな
 
 
 
