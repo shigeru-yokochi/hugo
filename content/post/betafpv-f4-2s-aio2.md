@@ -45,13 +45,13 @@ parts   | name
 # 結果
 
 ↓フライトデータ
-{{< figure src="/images/20200126-01.jpg" width="100%" >}}
+{{< figure src="/images/20200201-01.jpg" width="100%" >}}
 
 
 
 ↓動画はこちら(YouTube)
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/Z1kQOCqCn-g/0.jpg)](https://www.youtube.com/watch?v=Z1kQOCqCn-g)
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/bHZSaS7r_3g/0.jpg)](https://www.youtube.com/watch?v=bHZSaS7r_3g)
 
 
 
@@ -84,10 +84,10 @@ parts   | name
 
 #define MINIMUM_GROUND_CLEARANCE 40 //最小地上高
 #define MAXIMUM_GROUND_CLEARANCE 400 //最大地上高
-#define DEBUG_MAINLOOP_TO 3 //デバッグ用メインループタイムアウト指定(sec)
-#define FLIGHT_TIME 2 //DEBUG_MAINLOOP_TO - FLIGHT_TIME = landing time
+#define DEBUG_MAINLOOP_TO 4 //デバッグ用メインループタイムアウト指定(sec)
+#define FLIGHT_TIME 3 //DEBUG_MAINLOOP_TO - FLIGHT_TIME = landing time
 #define OFFSET_POWER 700
-#define LANDING_POWER 400
+#define LANDING_POWER 500
 ```
 
 
