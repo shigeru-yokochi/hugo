@@ -57,7 +57,7 @@ parts   | name
 
 ## コード
 
-- [GitHub上のコード](https://github.com/shigeru-yokochi/drone/tree/betafpv)を使用(branch:betafpv)
+- [GitHub上のコード](https://github.com/shigeru-yokochi/drone/tree/betafpv_VL53L0X_single)を使用(branch:betafpv_VL53L0X_single)
 - BETAFPV F4 2S AIO Brushless No Rx用の定義は以下の通り（aux2にarmを指定）
 
 - 設定値
