@@ -51,7 +51,7 @@ parts   | name
 
 ↓動画はこちら(YouTube)
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/bHZSaS7r_3g/0.jpg)](https://www.youtube.com/watch?v=bHZSaS7r_3g)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/bHZSaS7r_3g/0.jpg)](https://www.youtube.com/watch?v=bHZSaS7r_3g)
 
 
 
