@@ -34,6 +34,10 @@
   url = "/categories/trekking"
   weight = 100
 
+[[menu.main]]
+  name = "camp"
+  url = "/categories/camp"
+  weight = 101
 
 [[menu.main]]
   name = "bike"
