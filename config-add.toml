@@ -40,6 +40,11 @@
   weight = 101
 
 [[menu.main]]
+  name = "camera"
+  url = "/categories/camera"
+  weight = 101
+
+[[menu.main]]
   name = "bike"
   url = "/categories/bike"
   weight = 150

@@ -1,11 +1,11 @@
 ﻿+++
 title = "2019/04/06 星空観測"
 date = 2019-04-06T22:00:00+09:00
-categories = ["", ""]
+categories = ["camera", ""]
 description = ""
 draft = false
 image = "/images/4G4A3690-2s.jpg"
-tags = ["", ""]
+tags = ["star", ""]
 author = ""
 +++
 
