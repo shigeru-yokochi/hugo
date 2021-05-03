@@ -23,7 +23,6 @@
   url = "/categories/IT"
   weight = 85
 
-
 [[menu.main]]
   name = "drone"
   url = "/categories/drone"
@@ -53,6 +52,11 @@
   name = "audio"
   url = "/categories/audio"
   weight = 160
+
+[[menu.main]]
+  name = "bird"
+  url = "/categories/bird"
+  weight = 165
 
 [[menu.main]]
   name = "About me"
